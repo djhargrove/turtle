@@ -1,0 +1,34 @@
+{
+  "name": "kjdion84/turtle",
+  "description": "A Laravel 5.5 Package",
+  "homepage": "https://github.com/kjdion84/turtle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kevin Dion",
+      "email": "kjdion84@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "google/recaptcha": "~1.1",
+    "graham-campbell/throttle": "~6.0",
+    "laravel/framework": "5.5.*",
+    "yajra/laravel-datatables-oracle": "~8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Kjdion84\\Turtle\\": "src"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Kjdion84\\Turtle\\TurtleServiceProvider"
+      ]
+    }
+  }
+}

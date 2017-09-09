@@ -1,0 +1,34 @@
+<?php
+
+namespace Kjdion84\Turtle\Traits;
+
+trait LikesPizza
+{
+    use InTime;
+
+    // roles relationship
+    public function roles()
+    {
+        return $this->belongsToMany(config('turtle.models.role'));
+    }
+
+    // activities relationship
+    public function activities()
+    {
+        return $this->hasMany(config('turtle.models.activity'));
+    }
+
+    // gate permissions
+    public function hasPermission($name)
+    {
+        // admin role always has permission
+        if ($this->roles->contains('name', 'Admin')) {
+            return true;
+        }
+
+        // user permissions are role-based
+        $permission = app(config('turtle.models.permission'))->where('name', $name)->first();
+
+        return $permission->roles->intersect($this->roles)->count() > 0;
+    }
+}

@@ -1,0 +1,1 @@
+            $table->crud_attribute_schema;
