@@ -35,7 +35,7 @@
                         render: function (data, type, full) {
                             var actions = '';
 
-                            @can('View Activity')actions += ' <a href="{{ route('users.activity', ':id') }}" class="btn btn-primary" data-toggle="tooltip" title="Activity"><i class="fa fa-history"></i></a> ';@endcan
+                            @can('View Activities')actions += ' <a href="{{ route('users.activity', ':id') }}" class="btn btn-primary" data-toggle="tooltip" title="Activity"><i class="fa fa-history"></i></a> ';@endcan
                             @can('Update Users')
                                 actions += ' <button type="button" class="btn btn-primary" data-modal="{{ route('users.update', ':id') }}" data-toggle="tooltip" title="Update"><i class="fa fa-pencil"></i></button> ';
                                 actions += ' <button type="button" class="btn btn-primary" data-modal="{{ route('users.password', ':id') }}" data-toggle="tooltip" title="Password"><i class="fa fa-lock"></i></button> ';
