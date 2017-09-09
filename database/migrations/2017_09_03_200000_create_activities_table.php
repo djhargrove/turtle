@@ -14,7 +14,7 @@ class CreateActivitiesTable extends Migration
             $table->integer('user_id')->nullable();
             $table->integer('model_id')->nullable();
             $table->string('model_class')->nullable();
-            $table->json('data')->nullable();
+            $table->text('data')->nullable();
             $table->string('log');
             $table->timestamps();
 

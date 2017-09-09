@@ -33,7 +33,7 @@ class AuthController extends Controller
         $this->shellshock(request(), [
             'email' => 'required|email',
             'password' => 'required',
-        ]);
+        ], true);
 
         $throttler = Throttle::get(request()->instance(), 5, 1);
 
